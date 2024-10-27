@@ -1,19 +1,19 @@
-import Comments from '@/app/components/Comments';
+import Comments from '@/components/Comments';
 import { getAllPosts } from '@/lib/getAllposts';
 import { getPostComments } from '@/lib/getPostComments';
 import { getSinglePost } from '@/lib/getSinglePost';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-export const generateMetadata =async({params})=>{
-    const {id} = params;
-    const post = await getSinglePost(id);
+export const generateMetadata = async ({ params }) => {
+  const { id } = params;
+  const post = await getSinglePost(id);
 
-    return {
-        title: post.title,
-        description: post.body,
-    }
-}
+  return {
+    title: post.title,
+    description: post.body,
+  };
+};
 
 export default async function PostDetails({ params }) {
   const { id } = params;
@@ -39,10 +39,9 @@ export default async function PostDetails({ params }) {
   );
 }
 
-
-export const generateStaticParams = async()=>{
-    const posts = await getAllPosts();
-    return posts.map((post)=>({
-        id: post.id.toString(),
-    }))
-}
+export const generateStaticParams = async () => {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    id: post.id.toString(),
+  }));
+};

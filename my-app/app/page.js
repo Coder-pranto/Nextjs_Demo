@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import sampleImage from '@/public/images/spiderman.jpg'; // Assuming the image is stored in the 'public' folder
+import sampleImage from '@/public/images/spiderman.jpg';
+import ImageUpload from '@/components/ImageUpload';
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
         error? Magni ullam error architecto esse impedit ipsum molestiae libero
         expedita praesentium.
       </p>
+
+      <ImageUpload/>
+
     </main>
   );
 }
+
+
+

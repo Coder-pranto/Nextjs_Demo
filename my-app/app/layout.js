@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import NavLink from "@/components/NavLink";
 import Link from "next/link";
 
 const geistSans = localFont({
@@ -7,6 +8,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -31,24 +33,34 @@ export default function RootLayout({ children }) {
             </div>
             <ul className="text-lg flex gap-8">
               <li>
-                <Link href="/" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                <NavLink href="/" className="hover:text-blue-500 transition duration-300 ease-in-out">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link href="/about" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                <NavLink href="/about" className="hover:text-blue-500 transition duration-300 ease-in-out">
                   About
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link href="/blogs" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                <NavLink href="/blogs" className="hover:text-blue-500 transition duration-300 ease-in-out">
                   Blogs
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link href="/posts" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                <NavLink href="/posts" className="hover:text-blue-500 transition duration-300 ease-in-out">
                   Posts
-                </Link>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink href="/reviews" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                  Reviews
+                </NavLink>
+              </li>
+              <li>
+                <NavLink href="/tasks" className="hover:text-blue-500 transition duration-300 ease-in-out">
+                  Tasks
+                </NavLink>
               </li>
             </ul>
           </div>
